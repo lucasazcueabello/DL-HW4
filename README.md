@@ -65,7 +65,7 @@ To train this model, we'll use the following data:
 * `waypoints` - `(n_waypoints, 2)` float, target waypoints
 * `waypoints_mask` - `(n_waypoints,)` bool mask indicating "clean" waypoints
 
-<img src="assets/sample.png" width="600">
+<img src="../assets/sample.png" width="600">
 
 For parts 1a/1b, the model will not use the image as input, and instead take in the ground truth `track_left` and `track_right` as input.
 You can think of these two planners as having have perfect vision systems and knowledge of the world.
@@ -132,7 +132,7 @@ More specifically, the network will consist of cross attention using the waypoin
 
 This architecture most closely resembles the [Perceiver](https://arxiv.org/pdf/2103.03206) model, where in our setting, the "latent array" corresponds to the target waypoint query embeddings (`nn.Embedding`), while the "byte array" refers to the encoded input lane boundaries.
 
-<img src="assets/perceiver_architecture.png" width="600">
+<img src="../assets/perceiver_architecture.png" width="600">
 
 Training the transformer will likely require more tuning, so make sure to optimize your training pipeline to allow for faster experimentation.
 
